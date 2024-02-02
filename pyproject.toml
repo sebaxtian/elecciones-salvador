@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "elecciones-salvador"
+version = "0.1.0"
+description = "Scraping process to download each summary vote totals (JPG or PDF files) published by the Salvador government. There are 16 million votes approximately and the summary vote totals will be used by the independent project of the Guatemalan non-profit organization FundacionHCG.org and FiscalDigital.net"
+authors = ["Sebastian Rios Sabogal <sebaxtianrioss@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
