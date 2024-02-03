@@ -7,6 +7,11 @@ Scraping process to download each summary vote totals (JPG or PDF files) publish
 * Python 3.8+
 * Poetry 1.7+
     - [Install Poetry](https://python-poetry.org/docs/#installation)
+* Chrome Browser for Testing
+    - [Stable](https://googlechromelabs.github.io/chrome-for-testing/#stable)
+* Chrome Driver for Testing
+    - [Stable](https://googlechromelabs.github.io/chrome-for-testing/#stable)
+
 
 ## How to use
 
@@ -55,6 +60,13 @@ Installing dependencies:
 ```bash
 $(elecciones-salvador-py3.12)> poetry install --no-root
 ```
+
+### Step 5
+
+Download both Chrome App and Driver for Testing and copy each one in the specific folder:
+
+- Chrome App: **.src/scraping/browser/app**
+- Chrome Driver: **.src/scraping/browser/driver**
 
 ### Optional
 

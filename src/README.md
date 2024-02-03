@@ -14,6 +14,8 @@ The environement variables below are required:
 * AWS_ACCESS_KEY_ID=EXAMPLE1234DEMO
 * AWS_SECRET_ACCESS_KEY=ExAmPle1d2Em3o4Acce56ss7Key
 * AWS_DEFAULT_REGION=us-west-1
+* BROWSER_PATH=src/scraping/browser/app/chrome-linux64/chrome
+* BROWSER_DRIVER_PATH=src/scraping/browser/driver/chromedriver-linux64/chromedriver
 
 ## Data
 Read more [README.md](data/README.md)
