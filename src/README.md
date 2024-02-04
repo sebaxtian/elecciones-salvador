@@ -68,3 +68,30 @@ Delete a file from a bucket.
 # from elecciones-salvador root directory
 $promt> python src/aws/awss3.py --delete bike.jpg
 ```
+
+### Demon CLI
+
+A demon that performs scraping and file uploading tasks.
+
+```bash
+# from elecciones-salvador root directory
+$promt> python src/scraping/demon.py --help
+```
+
+#### Demon CLI: Scraper
+
+TODO: Scrapes data from a website and saves it in the src/data/0_raw directory.
+
+```bash
+# from elecciones-salvador root directory
+$promt> python src/scraping/demon.py --scraper
+```
+
+#### Demon CLI: Upload
+
+Uploads files from src/data/0_raw directory to an S3 bucket.
+
+```bash
+# from elecciones-salvador root directory
+$promt> python src/scraping/demon.py --upload
+```

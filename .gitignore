@@ -165,6 +165,9 @@ cython_debug/
 **/data/0_raw/*
 !**/data/0_raw/
 !**/data/0_raw/.gitkeep
+**/data/1_uploaded/*
+!**/data/1_uploaded/
+!**/data/1_uploaded/.gitkeep
 
 # Browser Binaries
 **/scraping/browser/*
