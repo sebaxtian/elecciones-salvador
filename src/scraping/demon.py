@@ -29,8 +29,8 @@ class Demon:
                 # Save the data to a jpg file
                 print("Saving data to jpg file")
 
-                # Wait for 10 seconds before scraping again
-                time.sleep(10)
+                # Wait for 1 seconds before scraping again
+                time.sleep(1)
             except Exception as e:
                 print(e)
 
@@ -59,10 +59,7 @@ class Demon:
                                     f"{Path().resolve()}/src/data/0_raw/{file}",
                                 ]
                             )
-
-                    # Move the files to the uploaded directory
-                    for file in files:
-                        if not file.endswith(".gitkeep"):
+                            # Move the files to the uploaded directory
                             print(f"Moving {file} to 1_uploaded directory")
                             src_path = os.path.join("src/data/0_raw", file)
                             dest_path = os.path.join("src/data/1_uploaded", file)
@@ -71,7 +68,7 @@ class Demon:
                 else:
                     print("No new files")
 
-                time.sleep(10)  # Wait for 10 seconds before checking again
+                time.sleep(0.2)  # Wait for 1 seconds before checking again
 
             except Exception as e:
                 print(e)

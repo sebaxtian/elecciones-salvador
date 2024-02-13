@@ -165,9 +165,18 @@ cython_debug/
 **/data/0_raw/*
 !**/data/0_raw/
 !**/data/0_raw/.gitkeep
+**/data/0_raw_uno/*
+!**/data/0_raw_uno/
+!**/data/0_raw_uno/.gitkeep
 **/data/1_uploaded/*
 !**/data/1_uploaded/
 !**/data/1_uploaded/.gitkeep
+**/data/2_validation/*
+!**/data/2_validation/
+!**/data/2_validation/.gitkeep
+**/data/mxgxw_gamma/*
+!**/data/mxgxw_gamma/
+!**/data/mxgxw_gamma/.gitkeep
 
 # Browser Binaries
 **/scraping/browser/*
