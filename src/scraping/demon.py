@@ -1,6 +1,7 @@
 import argparse
 import os
 import subprocess
+import threading
 import time
 from pathlib import Path
 
@@ -35,40 +36,65 @@ class Demon:
                 print(e)
 
     @staticmethod
-    def upload_to_s3():
+    def upload_to_s3(file):
+        print(f"\nUploading {file} to S3 bucket")
+        # Call the awss3.py script to upload the file to S3 bucket
+        subprocess.run(
+            [
+                "python",
+                f"{Path().resolve()}/src/aws/awss3.py",
+                "--upload",
+                f"{Path().resolve()}/src/data/0_raw/{file}",
+            ]
+        )
+        # Move the files to the uploaded directory
+        print(f"\nMoving {file} to 1_uploaded directory")
+        src_path = os.path.join("src/data/0_raw", file)
+        dest_path = os.path.join("src/data/1_uploaded", file)
+        os.rename(src_path, dest_path)
+        print(f"Finished uploading {file} to S3 bucket\n")
+
+    @staticmethod
+    def upload_files():
         """
         Uploads files from src/data/0_raw directory to an S3 bucket.
         """
         while True:
             try:
+                # Threads to upload files to s3
+                threads = []
+
                 # Check for new files in the directory
                 files = os.listdir("src/data/0_raw")
+                # Remove .gitkeep file
+                if ".gitkeep" in files:
+                    files.remove(".gitkeep")
 
                 if len(files) > 0:
 
+                    # Upload only the first chunk files
+                    chunk = 100
+                    files = files[:chunk]
+
                     # For each file in the directory, upload it to S3 bucket
+                    print(f"Uploading the first {len(files)} files to S3 bucket")
                     for file in files:
-                        if not file.endswith(".gitkeep"):
-                            print(f"Uploading {file} to S3 bucket")
-                            # Call the awss3.py script to upload the file to S3 bucket
-                            subprocess.run(
-                                [
-                                    "python",
-                                    f"{Path().resolve()}/src/aws/awss3.py",
-                                    "--upload",
-                                    f"{Path().resolve()}/src/data/0_raw/{file}",
-                                ]
-                            )
-                            # Move the files to the uploaded directory
-                            print(f"Moving {file} to 1_uploaded directory")
-                            src_path = os.path.join("src/data/0_raw", file)
-                            dest_path = os.path.join("src/data/1_uploaded", file)
-                            os.rename(src_path, dest_path)
+                        # Upload the file to S3 bucket
+                        thread = threading.Thread(
+                            target=Demon.upload_to_s3, args=(file,)
+                        )
+                        threads.append(thread)
+                        thread.start()
+
+                    # Wait for all threads to finish
+                    for thread in threads:
+                        thread.join()
 
                 else:
                     print("No new files")
 
-                time.sleep(0.2)  # Wait for 1 seconds before checking again
+                print("Wait for 2 seconds before checking again ...")
+                time.sleep(2)
 
             except Exception as e:
                 print(e)
@@ -110,8 +136,8 @@ def main():
         # Call the scraping method
         Demon.scraping()
     elif args.upload:
-        # Call the upload_to_s3 method
-        Demon.upload_to_s3()
+        # Call the upload_files method
+        Demon.upload_files()
     else:
         parser.print_help()
 

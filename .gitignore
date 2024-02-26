@@ -168,6 +168,9 @@ cython_debug/
 **/data/0_raw_uno/*
 !**/data/0_raw_uno/
 !**/data/0_raw_uno/.gitkeep
+**/data/0_raw_dos/*
+!**/data/0_raw_dos/
+!**/data/0_raw_dos/.gitkeep
 **/data/1_uploaded/*
 !**/data/1_uploaded/
 !**/data/1_uploaded/.gitkeep
@@ -177,6 +180,9 @@ cython_debug/
 **/data/mxgxw_gamma/*
 !**/data/mxgxw_gamma/
 !**/data/mxgxw_gamma/.gitkeep
+**/data/total_files/*
+!**/data/total_files/
+!**/data/total_files/.gitkeep
 
 # Browser Binaries
 **/scraping/browser/*

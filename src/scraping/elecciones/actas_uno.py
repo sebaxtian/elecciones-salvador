@@ -168,7 +168,7 @@ def main():
     # Setup driver
     driver = setup_driver()
 
-    start_acta = 1
+    start_acta = 10100
     end_acta = start_acta + 100
     while True:
         # Process actas not found
