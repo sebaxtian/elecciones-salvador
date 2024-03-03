@@ -15,6 +15,13 @@ requests = "^2.31.0"
 pyautogui = "^0.9.54"
 tk = "^0.1.0"
 pandas = "^2.2.0"
+loguru = "^0.7.2"
+tqdm = "^4.66.2"
+numpy = "^1.26.4"
+sounddevice = "^0.4.6"
+gtts = "^2.5.1"
+pygame = "^2.5.2"
+pendulum = "^3.0.0"
 
 
 [build-system]
