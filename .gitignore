@@ -158,3 +158,46 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# Data Files
+**/data/*
+!**/data/README.md
+**/data/0_raw/*
+!**/data/0_raw/
+!**/data/0_raw/.gitkeep
+**/data/0_raw_uno/*
+!**/data/0_raw_uno/
+!**/data/0_raw_uno/.gitkeep
+**/data/0_raw_dos/*
+!**/data/0_raw_dos/
+!**/data/0_raw_dos/.gitkeep
+**/data/1_uploaded/*
+!**/data/1_uploaded/
+!**/data/1_uploaded/.gitkeep
+**/data/mxgxw_gamma/*
+!**/data/mxgxw_gamma/
+!**/data/mxgxw_gamma/.gitkeep
+**/data/total_files/*
+!**/data/total_files/
+!**/data/total_files/.gitkeep
+**/data/0_duplicates/*
+!**/data/0_duplicates/
+!**/data/0_duplicates/.gitkeep
+!**/data/actas_not_found.txt
+!**/data/process_report_dos.csv
+!**/data/process_report_missing.csv
+!**/data/process_report_uno.csv
+!**/data/rename.sh
+
+# Browser Binaries
+**/scraping/browser/*
+!**/scraping/browser/.gitkeep
+**/scraping/browser/app/*
+!**/scraping/browser/app/
+!**/scraping/browser/app/.gitkeep
+**/scraping/browser/driver/*
+!**/scraping/browser/driver/
+!**/scraping/browser/driver/.gitkeep
+
+# Example TuCarro
+**/scraping/tucarro/*
