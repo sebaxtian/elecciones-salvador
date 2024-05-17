@@ -174,15 +174,20 @@ cython_debug/
 **/data/1_uploaded/*
 !**/data/1_uploaded/
 !**/data/1_uploaded/.gitkeep
-**/data/2_validation/*
-!**/data/2_validation/
-!**/data/2_validation/.gitkeep
 **/data/mxgxw_gamma/*
 !**/data/mxgxw_gamma/
 !**/data/mxgxw_gamma/.gitkeep
 **/data/total_files/*
 !**/data/total_files/
 !**/data/total_files/.gitkeep
+**/data/0_duplicates/*
+!**/data/0_duplicates/
+!**/data/0_duplicates/.gitkeep
+!**/data/actas_not_found.txt
+!**/data/process_report_dos.csv
+!**/data/process_report_missing.csv
+!**/data/process_report_uno.csv
+!**/data/rename.sh
 
 # Browser Binaries
 **/scraping/browser/*
