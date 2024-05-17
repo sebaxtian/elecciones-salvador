@@ -63,8 +63,8 @@ class ActaStatus(Enum):
 
 
 class ActaURL(Enum):
-    ALCALDE = "https://preliminar.tse.gob.sv/actas/ALCALDE"
-    DIP_PARLACEN = "https://preliminar.tse.gob.sv/actas/DIP_PARLACEN"
+    ALCALDE = "https://divulgacion.tse.gob.sv/actas/ALCALDE"
+    DIP_PARLACEN = "https://divulgacion.tse.gob.sv/actas/DIP_PARLACEN"
 
 
 class Acta:
@@ -508,7 +508,7 @@ def get_file_names_from_dashboard(url_dashboard):
 def init_data_sources_alcalde(data_sources, TOTAL=8562, START=1):
     logger.info("Initializing Alcalde data_sources ...")
     for number in range(START, TOTAL + 1):
-        URL_DASHBOARD = f"https://preliminar.tse.gob.sv/dashboard-jrv-{number}-4.html"
+        URL_DASHBOARD = f"https://divulgacion.tse.gob.sv/dashboard-jrv-{number}-4.html"
         data_sources.add_acta(Acta(URL_DASHBOARD))
     logger.info("data_sources Alcalde initialized, OK")
     return data_sources
@@ -517,7 +517,7 @@ def init_data_sources_alcalde(data_sources, TOTAL=8562, START=1):
 def init_data_sources_dip_parlacen(data_sources, TOTAL=8562, START=1):
     logger.info("Initializing DIP PARLACEN data_sources ...")
     for number in range(START, TOTAL + 1):
-        URL_DASHBOARD = f"https://preliminar.tse.gob.sv/dashboard-jrv-{number}-2.html"
+        URL_DASHBOARD = f"https://divulgacion.tse.gob.sv/dashboard-jrv-{number}-2.html"
         data_sources.add_acta(Acta(URL_DASHBOARD))
     logger.info("data_sources DIP PARLACEN initialized, OK")
     return data_sources
@@ -668,8 +668,8 @@ if __name__ == "__main__":
     # Total Actas: 8562 ALCALDE, 1 archivo por acta
     # Total Actas: 8562 DI PARLACEN, 4 archivos por acta
     # Total Archivos Estimados: 42810
-    # ds_file_name = marzo(total=8562, start=1, chunk_size=500)
-    ds_file_name = "marzo_2024-03-06T16:59:15.865+00:00.csv"
+    ds_file_name = marzo(total=8562, start=1, chunk_size=500)
+    # ds_file_name = "marzo_2024-03-06T16:59:15.865+00:00.csv"
 
     while True:
         text_to_speech("Iniciando Proceso")
